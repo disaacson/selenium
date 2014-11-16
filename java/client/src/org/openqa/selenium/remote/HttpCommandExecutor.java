@@ -121,6 +121,10 @@ public class HttpCommandExecutor implements CommandExecutor, NeedsLocalLogs {
     }
   }
 
+  public static synchronized void setHttpClientFactory(HttpClientFactory httpClientFactory) {
+    HttpCommandExecutor.httpClientFactory = httpClientFactory;
+  }
+
   /**
    * It may be useful to extend the commands understood by this {@code HttpCommandExecutor} at run
    * time, and this can be achieved via this method. Note, this is protected, and expected usage is

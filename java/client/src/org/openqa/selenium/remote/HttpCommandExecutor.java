@@ -36,7 +36,6 @@ import org.openqa.selenium.remote.http.HttpResponse;
 import org.openqa.selenium.remote.http.JsonHttpCommandCodec;
 import org.openqa.selenium.remote.http.JsonHttpResponseCodec;
 import org.openqa.selenium.remote.internal.ApacheHttpClient;
-import org.openqa.selenium.remote.internal.HttpClientFactory;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -89,10 +88,6 @@ public class HttpCommandExecutor implements CommandExecutor, NeedsLocalLogs {
       defaultClientFactory = new ApacheHttpClient.Factory();
     }
     return defaultClientFactory;
-  }
-
-  public static synchronized void setHttpClientFactory(HttpClientFactory httpClientFactory) {
-    HttpCommandExecutor.httpClientFactory = httpClientFactory;
   }
 
   /**
